@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "axios": "^0.18.0",
     "dotenv": "^6.1.0",
     "gatsby": "^2.0.19",
     "gatsby-image": "^2.0.15",
@@ -19,7 +20,8 @@
     "gatsby-transformer-sharp": "^2.1.4",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "strava": "0.0.2"
   },
   "keywords": [
     "gatsby"
