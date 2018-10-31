@@ -24,9 +24,6 @@ exports.sourceNodes = async (
   const { id, secret } = configOptions
   delete configOptions.plugins
 
-  console.log('UNTAPPD_ID: ', id)
-  console.log('UNTAPPD_SECRET: ', secret)
-
   return new Promise(async (resolve, reject) => {
     const checkins = await axios
       .get(`https://api.untappd.com/v4/user/beers/rhewitt`, {
