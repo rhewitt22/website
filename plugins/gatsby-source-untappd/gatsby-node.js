@@ -24,6 +24,9 @@ exports.sourceNodes = async (
   const { id, secret } = configOptions
   delete configOptions.plugins
 
+  console.log('UNTAPPD_ID: ', id)
+  console.log('UNTAPPD_SECRET: ', secret)
+
   return new Promise(async (resolve, reject) => {
     const checkins = await axios
       .get(`https://api.untappd.com/v4/user/beers/rhewitt`, {
@@ -33,17 +36,7 @@ exports.sourceNodes = async (
           limit: 50,
         },
       })
-      .then(res => {
-        res.data.response.beers.items.forEach(checkin => {
-          const nodeData = processBeer(
-            checkin,
-            createNodeId,
-            createContentDigest
-          )
-          createNode(nodeData)
-        })
-        resolve()
-      })
+      .then(res => res.data.response.beers.items)
       .catch(e => {
         console.log(e)
         reject(e)
@@ -54,5 +47,11 @@ exports.sourceNodes = async (
     // to check the 'count' property on the server response. If I have 85 beers
     // on my profile, and that's greater than the number of beers returned per
     // server call, I'll have to do another API call with an offset
+
+    checkins.forEach(checkin => {
+      const nodeData = processBeer(checkin, createNodeId, createContentDigest)
+      createNode(nodeData)
+    })
+    resolve()
   })
 }
