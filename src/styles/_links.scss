@@ -1,0 +1,7 @@
+header a {
+  border-bottom: 3px solid navy;
+
+  &:hover {
+    border-bottom: 3px solid white;
+  }
+}
