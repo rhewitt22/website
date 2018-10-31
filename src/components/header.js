@@ -4,15 +4,30 @@ import { Link } from 'gatsby'
 const links = ['About', 'Beers', 'Courses', 'Exercise']
 
 const generateLink = name => (
-  <li key={name.toLowerCase()} style={{}}>
-    <Link to={name.toLowerCase()}>{name}</Link>
+  <li
+    key={name.toLowerCase()}
+    style={{
+      margin: '0',
+    }}
+  >
+    <Link
+      to={name.toLowerCase()}
+      style={{
+        color: 'white',
+        display: 'block',
+        padding: '.5rem',
+        textDecoration: 'none',
+      }}
+    >
+      {name}
+    </Link>
   </li>
 )
 
 const Header = ({ siteTitle }) => (
-  <div
+  <header
     style={{
-      background: 'rebeccapurple',
+      background: 'navy',
       marginBottom: '1.45rem',
     }}
   >
@@ -20,7 +35,7 @@ const Header = ({ siteTitle }) => (
       style={{
         margin: '0 auto',
         maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
+        padding: '1.45rem 1.0875rem 0',
       }}
     >
       <h1 style={{ margin: 0 }}>
@@ -38,13 +53,16 @@ const Header = ({ siteTitle }) => (
         <ul
           style={{
             display: 'flex',
+            listStyle: 'none',
+            margin: '0',
+            padding: '0',
           }}
         >
           {links.map(generateLink)}
         </ul>
       </nav>
     </div>
-  </div>
+  </header>
 )
 
 export default Header
