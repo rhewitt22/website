@@ -33,19 +33,23 @@ exports.sourceNodes = async (
           limit: 50,
         },
       })
-      .then(res => res.data.response.beers.items)
+      .then(res => {
+        res.data.response.beers.items.forEach(checkin => {
+          const nodeData = processBeer(
+            checkin,
+            createNodeId,
+            createContentDigest
+          )
+          createNode(nodeData)
+        })
+        resolve()
+      })
       .catch(reject)
 
-    // Todo: Should be able to pull ALL beers, not just most recent 25
+    // Todo: Should be able to pull ALL beers, not just most recent 50
     // Todo: probably don't need to use the .then() to return checkins if I need
     // to check the 'count' property on the server response. If I have 85 beers
     // on my profile, and that's greater than the number of beers returned per
     // server call, I'll have to do another API call with an offset
-
-    checkins.forEach(checkin => {
-      const nodeData = processBeer(checkin, createNodeId, createContentDigest)
-      createNode(nodeData)
-    })
-    resolve()
   })
 }
