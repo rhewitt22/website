@@ -1,7 +1,7 @@
 const axios = require('axios')
 
 const processBeer = (checkin, createNodeId, createContentDigest) => {
-  const nodeId = createNodeId(`untappd-${checkin.beer.bid}`)
+  const nodeId = createNodeId(`untappd-${checkin.recent_created_at}`)
   const nodeContent = JSON.stringify(checkin)
 
   return Object.assign({}, checkin, {
