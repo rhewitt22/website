@@ -44,7 +44,10 @@ exports.sourceNodes = async (
         })
         resolve()
       })
-      .catch(reject)
+      .catch(e => {
+        console.log(e)
+        reject(e)
+      })
 
     // Todo: Should be able to pull ALL beers, not just most recent 50
     // Todo: probably don't need to use the .then() to return checkins if I need
