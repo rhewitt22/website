@@ -1,0 +1,28 @@
+.page-header {
+  background: navy;
+}
+
+.site-title {
+  margin: 0;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.nav-list {
+  @include unstyled-list;
+  display: flex;
+}
+
+.nav-item {
+  margin: 0;
+}
+
+.nav-link {
+  color: white;
+  display: block;
+  padding: 0.5rem;
+  text-decoration: none;
+}

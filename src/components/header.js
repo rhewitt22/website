@@ -4,60 +4,26 @@ import { Link } from 'gatsby'
 const links = ['About', 'Education', 'Exercise', 'Beers']
 
 const generateLink = name => (
-  <li
-    key={name.toLowerCase()}
-    style={{
-      margin: '0',
-    }}
-  >
-    <Link
-      to={name.toLowerCase()}
-      style={{
-        color: 'white',
-        display: 'block',
-        padding: '.5rem',
-        textDecoration: 'none',
-      }}
-    >
+  <li className="nav-item" key={name.toLowerCase()}>
+    <Link className="nav-link" to={name.toLowerCase()}>
       {name}
     </Link>
   </li>
 )
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: 'navy',
-      marginBottom: '1.45rem',
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem 0',
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          {siteTitle}
-        </Link>
+  <header className="page-header">
+    <div className="container">
+      <h1 className="site-title">
+        <Link to="/">{siteTitle}</Link>
       </h1>
       <nav>
-        <ul
-          style={{
-            display: 'flex',
-            listStyle: 'none',
-            margin: '0',
-            padding: '0',
-          }}
-        >
+        <ul className="nav-list">
+          <li className="nav-item">
+            <a className="nav-link" href="https://career.royhewitt.com">
+              Career
+            </a>
+          </li>
           {links.map(generateLink)}
         </ul>
       </nav>
