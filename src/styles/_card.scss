@@ -5,3 +5,12 @@
 .card {
   @include card;
 }
+
+.card-stacked-2 {
+  box-shadow: sheets-effect(white, right, 1);
+}
+
+.card-stacked-3,
+.card-stacked-many {
+  box-shadow: sheets-effect(white, right, 2);
+}
