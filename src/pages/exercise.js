@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
+import Workout from '../components/Workout'
 
 // TODO: Separate workouts from runs
 // TODO: Add filtering sorting
@@ -9,11 +10,9 @@ import Layout from '../components/layout'
 const Exercise = ({ data }) => (
   <Layout>
     <h1>Exercise</h1>
-    <ol>
+    <ol className="card-list">
       {data.allStravaWorkout.edges.map(({ node: workout }) => (
-        <li key={workout.id}>
-          {workout.type}: {workout.name}
-        </li>
+        <Workout key={workout.id} workout={workout} />
       ))}
     </ol>
   </Layout>
@@ -27,10 +26,13 @@ export const query = graphql`
           id
           name
           distance
-          moving_time
-          elapsed_time
-          total_elevation_gain
           type
+          workout_type
+          total_photo_count
+          total_elevation_gain
+          moving_time
+          start_date
+          elapsed_time
           achievement_count
           kudos_count
           comment_count
@@ -38,6 +40,9 @@ export const query = graphql`
           average_speed
           max_speed
           pr_count
+          total_elevation_gain
+          average_watts
+          kilojoules
         }
       }
     }
