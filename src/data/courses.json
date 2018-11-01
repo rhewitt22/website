@@ -247,7 +247,7 @@
     "departmentAbbrev": "GEOL"
   },
   {
-    "title": "Elementary Calculus I",
+    "title": "Calculus I",
     "description": "Basic ideas of differential and integral calculus, with emphasis on elementary techniques of differentiation and applications.",
     "grade": "C",
     "points": 6,
@@ -611,7 +611,7 @@
     "departmentAbbrev": "KNES"
   },
   {
-    "title": "Elementary Calculus II",
+    "title": "Calculus II",
     "description": "",
     "grade": "B",
     "points": 9,
