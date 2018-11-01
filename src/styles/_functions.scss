@@ -1,0 +1,29 @@
+@function sheets-effect(
+  $color: white,
+  $orientation: right,
+  $amount: 3,
+  $sheet-size: 2px
+) {
+  $alpha: 0.3;
+  $bottom: 1px;
+  $side: null;
+  $modifier: null;
+  @if ($orientation == left) {
+    $side: -1px;
+    $modifier: -1;
+  } @else {
+    $side: 1px;
+    $modifier: 1;
+  }
+  $ret: #{$side} #{$bottom} 0 #{rgba(darken($color, 90%), $alpha)};
+  @for $i from 1 through $amount {
+    $bottom: $bottom + $sheet-size;
+    $side: $side + $sheet-size * $modifier;
+    $alpha: $alpha + 0.025;
+    $ret: $ret, #{$side} #{$bottom} 0 #{$color};
+    $bottom: $bottom + 1;
+    $side: $side + 1 * $modifier;
+    $ret: $ret, #{$side} #{$bottom} 0 #{rgba(darken($color, 90%), $alpha)};
+  }
+  @return $ret;
+}
