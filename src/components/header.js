@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-const links = ['About', 'Beers', 'Courses', 'Exercise']
+const links = ['About', 'Education', 'Exercise', 'Beers']
 
 const generateLink = name => (
   <li
