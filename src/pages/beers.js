@@ -7,12 +7,7 @@ import Beer from '../components/Beer'
 const Beers = ({ data }) => (
   <Layout>
     <h1>Beer</h1>
-    <ol
-      style={{
-        display: 'flex',
-        flexWrap: 'wrap',
-      }}
-    >
+    <ol className="card-list">
       {data.allUntappdCheckin.edges.map(({ node: checkin }) => (
         <Beer key={checkin.id} checkin={checkin} />
       ))}
@@ -24,7 +19,7 @@ export default Beers
 
 export const query = graphql`
   query {
-    allUntappdCheckin {
+    allUntappdCheckin(sort: { fields: [recent_created_at], order: DESC }) {
       edges {
         node {
           id
