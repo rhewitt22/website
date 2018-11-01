@@ -1,0 +1,7 @@
+.card-list {
+  @include unstyled-list;
+}
+
+.card {
+  @include card;
+}
