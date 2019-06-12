@@ -92,7 +92,7 @@
   },
   {
     "title": "Introduction to Engineering Design",
-    "description": "Students work as teams to design and build a product using computer software for word-processing, spreadsheet, CAD, and communication skills.",
+    "description": "Students work in teams to design and build a product using computer software for word-processing, spreadsheet, CAD, and communication skills.",
     "grade": "B-",
     "points": 9,
     "credits": 3,
@@ -365,7 +365,7 @@
   },
   {
     "title": "Computer Cartography",
-    "description": "dvanced skills of computer mapping using more sophisticated software packages. Map projection evaluation and selection, coordinate system conversion, techniques of quantitative thematic mapping, map design and generalization, hypermedia and animated cartopgraphy. Emphasis on designing and making cartographically sound sophisticated thematic maps.",
+    "description": "Advanced skills of computer mapping using more sophisticated software packages. Map projection evaluation and selection, coordinate system conversion, techniques of quantitative thematic mapping, map design and generalization, hypermedia and animated cartopgraphy. Emphasis on designing and making cartographically sound sophisticated thematic maps.",
     "grade": "A",
     "points": 12,
     "credits": 3,
@@ -378,7 +378,7 @@
   },
   {
     "title": "Fundamentals of Physics",
-    "description": "",
+    "description": "A course in general physics treating the fields of mechanics, heat, sound, electricity, magnetism, optics, and modern physics.",
     "grade": "B",
     "points": 12,
     "credits": 4,
@@ -430,7 +430,7 @@
   },
   {
     "title": "Capstone in Environmental Science and Policy",
-    "description": "ntegration of physical, biological, and social sciences with applications to environmental science and policy. Problem-solving and multi-disciplinary case study evaluations pertinent to contemporary and future issues related to the environment.",
+    "description": "Integration of physical, biological, and social sciences with applications to environmental science and policy. Problem-solving and multi-disciplinary case study evaluations pertinent to contemporary and future issues related to the environment.",
     "grade": "B+",
     "points": 9,
     "credits": 3,
@@ -612,7 +612,7 @@
   },
   {
     "title": "Calculus II",
-    "description": "",
+    "description": "The second semester of an introduction to calculus for students in the biological, social and management sciences, and architecture. Applications of calculus to these disciplines form an important part of the course. Concrete calculations are emphasized and provide an opportunity to practice algebraic skills introduced in earlier courses.",
     "grade": "B",
     "points": 9,
     "credits": 3,
