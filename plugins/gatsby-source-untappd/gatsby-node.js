@@ -3,16 +3,13 @@ const axios = require('axios')
 let pages = 0
 
 const processBeer = (checkin, createNodeId, createContentDigest) => {
-  const nodeId = createNodeId(`untappd-${checkin.recent_created_at}`)
-  const nodeContent = JSON.stringify(checkin)
-
   return Object.assign({}, checkin, {
-    id: nodeId,
+    id: createNodeId(`untappd-${checkin.recent_created_at}`),
     parent: null,
     children: [],
     internal: {
       type: `UntappdCheckin`,
-      content: nodeContent,
+      content: JSON.stringify(checkin),
       contentDigest: createContentDigest(checkin),
     },
   })
