@@ -14,16 +14,13 @@ const getAccessToken = config => {
 }
 
 const processWorkout = (workout, createNodeId, createContentDigest) => {
-  const nodeId = createNodeId(`strava-${workout.id}`)
-  const nodeContent = JSON.stringify(workout)
-
   return Object.assign({}, workout, {
-    id: nodeId,
+    id: createNodeId(`strava-${workout.id}`),
     parent: null,
     children: [],
     internal: {
       type: `StravaWorkout`,
-      content: nodeContent,
+      content: JSON.stringify(workout),
       contentDigest: createContentDigest(workout),
     },
   })
@@ -40,11 +37,11 @@ exports.sourceNodes = async (
     access_token: response.data.access_token,
     client_id: configOptions.id,
     client_secret: configOptions.secret,
-    redirect_uri: 'localhost',
+    redirect_uri: configOptions.redirect_uri,
   })
 
   return new Promise((resolve, reject) => {
-    strava.athlete.activities.get({ paginate: true }, (err, res) => {
+    strava.athlete.activities.get( (err, res) => {
       if (err) reject(err)
 
       res.forEach(workout => {

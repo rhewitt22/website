@@ -27,7 +27,6 @@ export const query = graphql`
           name
           distance
           type
-          workout_type
           total_photo_count
           total_elevation_gain
           moving_time
@@ -41,8 +40,6 @@ export const query = graphql`
           max_speed
           pr_count
           total_elevation_gain
-          average_watts
-          kilojoules
         }
       }
     }
