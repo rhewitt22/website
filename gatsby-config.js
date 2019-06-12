@@ -59,6 +59,7 @@ module.exports = {
         id: process.env.STRAVA_CLIENT_ID,
         secret: process.env.STRAVA_CLIENT_SECRET,
         refresh_token: process.env.STRAVA_REFRESH_TOKEN,
+        redirect_uri: process.env.STRAVA_REDIRECT_URI
       },
     },
   ],
