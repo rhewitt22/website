@@ -10,7 +10,7 @@
   "author": "@r0yhewitt <roy_hewitt@fws.gov>",
   "license": "SAX-PD",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "strava": "0.0.2"
   }
 }
